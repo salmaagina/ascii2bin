@@ -17,13 +17,16 @@ int main(int argc, char * argv[], char ** envp)
 
 	char ascii_value;
 	char digit;
-	int offset = 1;
+	int count = 0;
+	int offset = 48;
 	int number = 0;
 	int retval;
 
 retval = read(0, &ascii_value, 1);
-while (retval == 1)
-	
+{
+	while (retval == 1)
+		count++;
+}
 digit = ascii_value - offset;
 number = (number << 1) + digit;
 retval = read(0, &ascii_value, 1);
